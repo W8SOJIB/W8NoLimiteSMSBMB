@@ -40,12 +40,15 @@ def main():
         'x-requested-with': 'XMLHttpRequest'
     }
 
+    # Get mobile number from the user
+    mobile_number = input("Enter the mobile number: ")
+
     data = {
-        'mobile': '01313613360'
+        'mobile': mobile_number
     }
 
     # Ask the user how many requests to send
-    num_requests = int(input("How many requests do you want to send? "))
+    num_requests = int(input("How many SMS do you want to send? "))
 
     # Run the async loop to send multiple requests
     asyncio.run(send_multiple_requests(url, headers, data, num_requests))
